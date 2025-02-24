@@ -79,6 +79,7 @@ Name: %{java}-%{featurever}-%{origin}
 
 # not-duplicated requires/provides/obsoletes for normal/debug packages
 %define java_rpo() %{expand:
+Requires: %{java}-%{featurever}-%{origin}-headless
 Provides: java-%{origin}%{?1} = %{epoch}:%{version}-%{release}
 Provides: jre-%{origin}%{?1} = %{epoch}:%{version}-%{release}
 Provides: java%{?1} = %{epoch}:%{version}-%{release}
@@ -99,6 +100,7 @@ Provides: java-headless%{?1} = %{epoch}:%{version}-%{release}
 }
 
 %define java_devel_rpo() %{expand:
+Requires: %{java}-%{featurever}-%{origin}
 Provides: java-devel-%{origin}%{?1} = %{epoch}:%{version}-%{release}
 Provides: java-sdk-%{origin}%{?1} = %{epoch}:%{version}-%{release}
 Provides: java-devel%{?1} = %{epoch}:%{version}-%{release}
@@ -106,6 +108,7 @@ Provides: java-sdk%{?1} = %{epoch}:%{version}-%{release}
 }
 
 %define java_jmods_rpo() %{expand:
+Requires: %{java}-%{featurever}-%{origin}
 Provides: java-jmods%{?1} = %{epoch}:%{version}-%{release}
 }
 
